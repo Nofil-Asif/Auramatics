@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 
 const Floating3DObject = () => {
   return (
-    <div className="relative w-full h-0 flex justify-end items-center pr-8">
+    <div
+      aria-hidden="true"
+      className="relative w-full h-0 flex justify-end items-center pr-8"
+    >
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}

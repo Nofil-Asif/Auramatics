@@ -31,14 +31,6 @@ import { useRef } from "react";
 //   },
 // ];
 
-// Company stats
-const companyStats = [
-  { number: "50+", label: "Projects Completed" },
-  { number: "25+", label: "Happy Clients" },
-  { number: "5+", label: "Years Experience" },
-  { number: "99%", label: "Client Satisfaction" },
-];
-
 // Values data
 const companyValues = [
   {
@@ -96,7 +88,7 @@ export default function AboutUs() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              We don&apos;t just create technology — we create intelligent
+              We don&apos;t just create technology, we create intelligent
               ecosystems that drive growth and transform businesses.
             </p>
           </div>
@@ -155,24 +147,6 @@ export default function AboutUs() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Company Stats */}
-      <section className="py-16 px-4 sm:px-6 md:px-10 lg:px-20 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {companyStats.map((stat, index) => (
-              <div key={index} className="text-center space-y-2">
-                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#011632]">
-                  {stat.number}
-                </div>
-                <div className="text-lg text-[#3C4959] font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

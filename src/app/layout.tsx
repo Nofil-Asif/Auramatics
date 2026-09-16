@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import MotionProvider from "./components/MotionProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   description:
     "Transforming businesses with intelligent technology. AURAMATICS specializes in data engineering, AI, and custom software development.",
   keywords:
-    "data engineering, AI, artificial intelligence, data science, web development, mobile apps, automation",
+    "data engineering, AI, artificial intelligence, data science, BI analytics, agentic AI, automation, Azure, Databricks",
   authors: [{ name: "AURAMATICS Team" }],
   creator: "AURAMATICS",
   publisher: "AURAMATICS",
@@ -89,7 +90,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

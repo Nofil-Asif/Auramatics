@@ -1,6 +1,5 @@
 "use client";
 import React, { forwardRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -11,7 +10,7 @@ const Hero_new = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-12 px-4 sm:px-6 lg:px-16 py-16 sm:py-20 lg:py-24"
+      className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-12 px-4 sm:px-6 lg:px-16 py-16 sm:py-20 lg:py-24 overflow-hidden"
       style={{
         backgroundImage: `url(${HeroBg.src})`,
         backgroundSize: "cover",
@@ -19,28 +18,47 @@ const Hero_new = forwardRef<HTMLDivElement>((props, ref) => {
         backgroundRepeat: "no-repeat",
       }}
     >
+      {/* Slow gradient shift, purely decorative, respects prefers-reduced-motion via MotionConfig */}
+      <motion.div
+        aria-hidden="true"
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(120deg, rgba(59,130,246,0.25), rgba(139,92,246,0.25), rgba(37,150,190,0.25))",
+          backgroundSize: "200% 200%",
+        }}
+        animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+      />
+
       {/* Content Container */}
       <div className="relative z-10 w-full lg:w-1/2 flex flex-col justify-center space-y-6 sm:space-y-8 lg:pl-16">
         {/* Main Content */}
         <div className="text-white space-y-4 sm:space-y-6">
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Where Data Meets Intelligence
+            Data &amp; AI Engineering Partner for Growing Companies
           </h1>
 
           {/* Description */}
           <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed max-w-lg">
-            We build intelligent solutions in Data Engineering, AI, Automation,
-            Web & Mobile Development.
+            We build intelligent solutions in Data Engineering, BI &amp;
+            Analytics, and Data Science, AI &amp; Automation.
           </p>
 
           {/* Call-to-Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
-            <Link href="/contact" passHref>
-              <button className="w-full sm:w-auto bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:from-blue-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
-                Get a Free Consultation
-              </button>
-            </Link>
+            <button
+              onClick={() => {
+                const auditSection = document.getElementById("data-bi-audit");
+                if (auditSection) {
+                  auditSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="w-full sm:w-auto bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:from-blue-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+            >
+              Get a Data &amp; BI Audit
+            </button>
 
             <button
               onClick={() => {
@@ -55,10 +73,6 @@ const Hero_new = forwardRef<HTMLDivElement>((props, ref) => {
             </button>
           </div>
         </div>
-
-        {/* Stats Section */}
-
-        <StatsSection />
       </div>
 
       {/* Logo and Branding Section */}
@@ -83,52 +97,6 @@ const Hero_new = forwardRef<HTMLDivElement>((props, ref) => {
     </section>
   );
 });
-
-// Stats Section Component
-const StatsSection = () => {
-  const stats = [
-    {
-      number: "120+",
-      label: "Projects Delivered",
-    },
-    {
-      number: "10+",
-      label: "Years Experience",
-    },
-    {
-      number: "95%",
-      label: "Client Satisfaction",
-    },
-  ];
-
-  return (
-    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 sm:pt-8 max-w-xl">
-      {stats.map((stat, index) => (
-        <motion.div
-          key={index}
-          className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 sm:p-4 w-full sm:w-40 text-center hover:bg-white/20 transition-all duration-200 hover:scale-105"
-          animate={{
-            y: [0, -20, 0, -20, 0],
-            scale: [1, 1.05, 1, 1.05, 1],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 4,
-            ease: "easeInOut",
-            delay: index * 0.3, // Creates wave effect with 0.3s delay between each card
-          }}
-        >
-          <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">
-            {stat.number}
-          </div>
-          <div className="text-xs sm:text-sm md:text-base text-gray-200">
-            {stat.label}
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  );
-};
 
 Hero_new.displayName = "Hero_new";
 

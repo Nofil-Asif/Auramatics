@@ -42,7 +42,7 @@ const industries = [
   {
     title: "Manufacturing & Logistics ",
     description:
-      "lDriving efficiency with IoT, data pipelines, and AI to streamline supply chains and smart manufacturing processes.",
+      "Driving efficiency with IoT, data pipelines, and AI to streamline supply chains and smart manufacturing processes.",
     icon: <MdPrecisionManufacturing />,
   },
 ];
@@ -50,15 +50,21 @@ const industries = [
 export default function IndustrySection() {
   return (
     <section className="py-10 px-6 md:px-10 lg:p-20 space-y-6 bg-gray-50">
-      <h2 className="text-4xl md:5xl lg:text-[64px] leading-[100%] text-[#011632] font-bold text-center">
-        Industries We Serve
+      <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight text-[#011632] font-bold text-center max-w-4xl mx-auto">
+        From airport operations to retail floors, the same rigor, wherever
+        the data lives.
       </h2>
       <p className="text-center text-2xl leading-8 font-bold text-[#3C4959]">
         Our services are tailored to meet the unique needs of various industries
       </p>
       <div className="grid gap-6 md:grid-cols-3">
         {industries.map((industry, idx) => (
-          <IndustryCard key={idx} {...industry} />
+          <IndustryCard
+            key={idx}
+            {...industry}
+            index={idx}
+            badgeLabel="Primary Focus"
+          />
         ))}
       </div>
     </section>
