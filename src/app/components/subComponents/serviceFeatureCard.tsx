@@ -1,14 +1,16 @@
 "use client";
-// import { style } from "framer-motion/client";
 import React from "react";
-// import { IoArrowForward } from "react-icons/io5";
+import { motion } from "framer-motion";
+
 interface ServiceFeatureCardProps {
   title: string;
   subtitle?: string;
   description: string;
   icon?: React.ReactNode;
   isHighlighted?: boolean;
+  badgeLabel?: string;
   bg?: string;
+  index?: number;
 }
 
 const ServiceFeatureCard = ({
@@ -17,17 +19,30 @@ const ServiceFeatureCard = ({
   description,
   icon,
   isHighlighted = false,
+  badgeLabel,
   bg = "#FAFAFA",
+  index = 0,
 }: ServiceFeatureCardProps) => {
   return (
-    <div
-      className={`rounded-xl flex flex-col items-center justify-center gap-3 sm:gap-4 h-64 sm:h-72 py-4 sm:py-6 px-3 sm:px-4 text-center hover:scale-105 ${
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.45, delay: index * 0.08 }}
+      whileHover={{ y: -6 }}
+      className={`relative rounded-xl flex flex-col items-center justify-center gap-3 sm:gap-4 h-64 sm:h-72 py-4 sm:py-6 px-3 sm:px-4 text-center ${
         isHighlighted
           ? "border-[#2596be] border-2 bg-[#FFFDF5]"
           : "border-[#E7E7E7] border bg-white"
-      } transition-all duration-200`}
+      } transition-shadow duration-300 hover:shadow-xl`}
       style={{ backgroundColor: `${bg}` }}
     >
+      {isHighlighted && badgeLabel && (
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold uppercase tracking-wide text-white bg-[#2596be] rounded-full px-3 py-1 shadow-sm">
+          {badgeLabel}
+        </span>
+      )}
+
       <div className="h-8 w-8 sm:h-12 sm:w-12 text-3xl sm:text-5xl text-[#2596be]">
         {icon}
       </div>
@@ -45,13 +60,7 @@ const ServiceFeatureCard = ({
           {description}
         </p>
       </div>
-      <button className="text-mustard-yellow font-bold text-sm flex items-center gap-1 hover:underline mt-2">
-        {/* Learn more
-        <span>
-          <IoArrowForward />
-        </span> */}
-      </button>
-    </div>
+    </motion.div>
   );
 };
 

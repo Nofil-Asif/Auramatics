@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Microsoft Fabric">
+  <title>Microsoft Fabric</title>
+  <defs>
+    <linearGradient id="fabricGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0090F0"/>
+      <stop offset="50%" stop-color="#1CC6C6"/>
+      <stop offset="100%" stop-color="#8763F2"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#fabricGradient)" d="M12 1.5c-2.9 0-5.6 1.15-7.6 3.15A10.72 10.72 0 0 0 1.25 12c0 2.9 1.15 5.6 3.15 7.6A10.72 10.72 0 0 0 12 22.75c2.9 0 5.6-1.15 7.6-3.15A10.72 10.72 0 0 0 22.75 12c0-2.9-1.15-5.6-3.15-7.6A10.72 10.72 0 0 0 12 1.5Zm0 2.4a8.1 8.1 0 1 1 0 16.2 8.1 8.1 0 0 1 0-16.2Z"/>
+  <circle cx="12" cy="12" r="4.2" fill="url(#fabricGradient)"/>
+</svg>

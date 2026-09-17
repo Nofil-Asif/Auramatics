@@ -9,6 +9,8 @@ import Floating3DObject from "./components/subComponents/Floating3DObject";
 import IndustrySection from "./components/heroSection/ServedIndustries";
 import WhyChoseUs from "./components/heroSection/WhyChoseUs";
 import WorkingStack from "./components/heroSection/WorkingStack";
+import CaseStudies from "./components/heroSection/CaseStudies";
+import DataBiAudit from "./components/heroSection/DataBiAudit";
 import Footer from "./components/baselayout/footer";
 
 export default function Home() {
@@ -21,13 +23,8 @@ export default function Home() {
       <Hero_new ref={heroRef} />
       <AboutUS
         ref={aboutRef}
-        title="About Us"
-        description={
-          <>
-            We don’t just create technology <br /> we create intelligent
-            ecosystems that drive growth.
-          </>
-        }
+        title="Most teams don't need another dashboard. They need a system they can still run in a year."
+        description="We build data and AI systems designed to be owned and operated by your team long after we hand them over."
       />
 
       <Floating3DObject />
@@ -35,6 +32,8 @@ export default function Home() {
       <Services ref={servicesRef} />
 
       <IndustrySection />
+      <CaseStudies />
+      <DataBiAudit />
       <WhyChoseUs />
       <WorkingStack />
       <Footer />
