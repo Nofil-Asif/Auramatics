@@ -34,7 +34,7 @@ const CONTACT_METHODS: ContactMethod[] = [
   {
     icon: FaEnvelope,
     title: "Email Us",
-    value: "info@auramtics.tech",
+    value: "info@auramatics.tech",
     description: "Send us a message anytime",
     color: "from-blue-500 to-cyan-500",
   },

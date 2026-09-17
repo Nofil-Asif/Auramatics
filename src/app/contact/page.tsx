@@ -88,7 +88,7 @@ const ContactPage = () => {
                       <h3 className="text-[#011632] font-semibold text-lg">
                         Email Us
                       </h3>
-                      <p className="text-[#3C4959]">info@auramtics.tech</p>
+                      <p className="text-[#3C4959]">info@auramatics.tech</p>
                     </div>
                   </div>
                 </motion.div>
