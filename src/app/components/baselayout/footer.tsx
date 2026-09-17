@@ -24,7 +24,7 @@ const footerLinks = [
   {
     title: "Contact",
     items: [
-      { name: "info@auramtics.tech", url: "/contact" },
+      { name: "info@auramatics.tech", url: "/contact" },
       { name: "Schedule a Consultation", url: "/contact" },
     ],
   },
