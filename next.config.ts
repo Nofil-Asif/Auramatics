@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
-  distDir: "out",
   // No basePath or assetPrefix needed for custom domain
   images: {
     unoptimized: true,

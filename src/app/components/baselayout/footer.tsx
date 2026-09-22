@@ -1,5 +1,5 @@
 "use client";
-import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa6";
 import Link from "next/link";
 import Logo from "@/assets/Homepage/logo_new.png";
 import Image from "next/image";
@@ -31,8 +31,7 @@ const footerLinks = [
 ];
 
 const socialIcons = [
-  { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: FaXTwitter, href: "https://twitter.com", label: "X" },
+  { icon: FaLinkedinIn, href: "https://www.linkedin.com/company/109439706", label: "LinkedIn" },
 ];
 
 const Footer = () => {

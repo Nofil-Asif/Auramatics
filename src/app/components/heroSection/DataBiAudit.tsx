@@ -38,7 +38,7 @@ export default function DataBiAudit() {
               Fixed Scope
             </span>
             <span className="bg-white/10 rounded-lg px-4 py-2 font-semibold">
-              Price: [TBD, contact us]
+              Pricing on Request
             </span>
           </div>
           <Link
